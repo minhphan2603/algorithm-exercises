@@ -2,6 +2,7 @@
  * @param {number[]} nums
  * @param {number} target
  * @return {number[]}
+ * https://leetcode.com/problems/two-sum/
  */
 var twoSum = function (nums, target) {
   const check = {};

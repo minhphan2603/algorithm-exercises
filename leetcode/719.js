@@ -2,6 +2,7 @@
  * @param {number[]} nums
  * @param {number} k
  * @return {number}
+ * https://leetcode.com/problems/find-k-th-smallest-pair-distance/
  */
 var smallestDistancePair = function (nums, k) {
   const count = {};

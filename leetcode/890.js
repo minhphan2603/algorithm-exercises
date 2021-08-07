@@ -2,6 +2,7 @@
  * @param {string[]} words
  * @param {string} pattern
  * @return {string[]}
+ * https://leetcode.com/problems/find-and-replace-pattern/
  */
 var findAndReplacePattern = function (words, pattern) {
   const checked = {};

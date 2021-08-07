@@ -1,6 +1,7 @@
 /**
  * @param {number[][]} grid
  * @return {number}
+ * https://leetcode.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/
  */
 var minCost = function (grid) {
   const m = grid.length;

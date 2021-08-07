@@ -2,6 +2,7 @@
  * @param {number} k
  * @param {number} n
  * @return {number[][]}
+ * https://leetcode.com/problems/combination-sum-iii/
  */
 var combinationSum3 = function (k, n) {
   if (n < (k * (k + 1)) / 2) {

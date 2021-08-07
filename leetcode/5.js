@@ -1,6 +1,7 @@
 /**
  * @param {string} s
  * @return {string}
+ * https://leetcode.com/problems/longest-palindromic-substring/
  */
 var longestPalindrome = function (s) {
   let max = 0;

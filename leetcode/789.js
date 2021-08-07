@@ -2,6 +2,7 @@
  * @param {number[][]} ghosts
  * @param {number[]} target
  * @return {boolean}
+ * https://leetcode.com/problems/escape-the-ghosts/
  */
 var escapeGhosts = function (ghosts, target) {
   const targetDistance = Math.abs(target[0]) + Math.abs(target[1]);
