@@ -83,43 +83,45 @@ var maxHeight = function (cuboids) {
     }
   }
   for (let k = 0; k < cuboids.length; k++) {
-    for (let i = 0; i < cuboids.length; i++) {
-      if (i !== k) {
-        for (let j = 0; j < cuboids.length; j++) {
-          if (k !== j && i !== j) {
-            for (let hk = 0; hk < 3; hk++) {
-              for (let hi = 0; hi < 3; hi++) {
-                for (let hj = 0; hj < 3; hj++) {
-                  if (
-                    canArrange(
-                      cuboids[i][cases[hi].i],
-                      cuboids[i][cases[hi].j],
-                      cuboids[i][hi],
-                      cuboids[k][cases[hk].i],
-                      cuboids[k][cases[hk].j],
-                      cuboids[k][hk]
-                    ) &&
-                    canArrange(
-                      cuboids[k][cases[hk].i],
-                      cuboids[k][cases[hk].j],
-                      cuboids[k][hk],
-                      cuboids[j][cases[hj].i],
-                      cuboids[j][cases[hj].j],
-                      cuboids[j][hj]
-                    )
-                  ) {
+    for (let hk = 0; hk < 3; hk++) {
+      for (let i = 0; i < cuboids.length; i++) {
+        if (i !== k) {
+          for (let hi = 0; hi < 3; hi++) {
+            if (cuboids[i][hi] >= cuboids[k][hk]) {
+              for (let j = 0; j < cuboids.length; j++) {
+                if (k !== j && i !== j) {
+                  for (let hj = 0; hj < 3; hj++) {
                     if (
-                      maxHeights[i][j][hi][hj] <
-                      maxHeights[i][k][hi][hk] +
-                        maxHeights[k][j][hk][hj] -
+                      canArrange(
+                        cuboids[i][cases[hi].i],
+                        cuboids[i][cases[hi].j],
+                        cuboids[i][hi],
+                        cuboids[k][cases[hk].i],
+                        cuboids[k][cases[hk].j],
                         cuboids[k][hk]
+                      ) &&
+                      canArrange(
+                        cuboids[k][cases[hk].i],
+                        cuboids[k][cases[hk].j],
+                        cuboids[k][hk],
+                        cuboids[j][cases[hj].i],
+                        cuboids[j][cases[hj].j],
+                        cuboids[j][hj]
+                      )
                     ) {
-                      maxHeights[i][j][hi][hj] =
+                      if (
+                        maxHeights[i][j][hi][hj] <
                         maxHeights[i][k][hi][hk] +
-                        maxHeights[k][j][hk][hj] -
-                        cuboids[k][hk];
-                      if (result < maxHeights[i][j][hi][hj]) {
-                        result = maxHeights[i][j][hi][hj];
+                          maxHeights[k][j][hk][hj] -
+                          cuboids[k][hk]
+                      ) {
+                        maxHeights[i][j][hi][hj] =
+                          maxHeights[i][k][hi][hk] +
+                          maxHeights[k][j][hk][hj] -
+                          cuboids[k][hk];
+                        if (result < maxHeights[i][j][hi][hj]) {
+                          result = maxHeights[i][j][hi][hj];
+                        }
                       }
                     }
                   }
@@ -136,8 +138,11 @@ var maxHeight = function (cuboids) {
 
 console.log(
   maxHeight([
-    [50, 45, 20],
-    [95, 37, 53],
-    [45, 23, 12],
+    [7, 11, 17],
+    [7, 17, 11],
+    [11, 7, 17],
+    [11, 17, 7],
+    [17, 7, 11],
+    [17, 11, 7],
   ])
 );
