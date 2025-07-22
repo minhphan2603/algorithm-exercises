@@ -1,38 +1,34 @@
 /** https://leetcode.com/problems/maximum-erasure-value */
 function maximumUniqueSubarray(nums: number[]): number {
   let prevScore = nums[0];
-  let prevSet = new Set([nums[0]]);
-  const indexMap: Record<number, number | undefined> = { [nums[0]]: 0 };
+  let prevMap = new Map([[nums[0], 0]]);
   let result = prevScore;
 
   for (let i = 1; i < nums.length; i++) {
     const curNum = nums[i];
-    if (!prevSet.has(curNum)) {
+    const prevIndex = prevMap.get(curNum);
+    if (prevIndex == null) {
       prevScore += curNum;
-      prevSet.add(curNum);
     } else {
-      const prevIndex = indexMap[curNum];
-      if (prevIndex != null && prevIndex < i - prevSet.size / 2) {
-        const startIndex = i - prevSet.size;
+      if (prevIndex < i - prevMap.size / 2) {
+        const startIndex = i - prevMap.size;
         for (let j = prevIndex - 1; j >= startIndex; j--) {
           const checkingNum = nums[j];
           prevScore -= checkingNum;
-          prevSet.delete(checkingNum);
+          prevMap.delete(checkingNum);
         }
       } else {
         prevScore = 0;
-        prevSet = new Set();
-        for (let j = i; j >= 0; j--) {
+        prevMap = new Map([]);
+        for (let j = i; j > prevIndex; j--) {
           const checkingNum = nums[j];
-          if (prevSet.has(checkingNum)) {
-            break;
-          }
           prevScore += checkingNum;
-          prevSet.add(checkingNum);
+          prevMap.set(checkingNum, j);
         }
       }
     }
-    indexMap[curNum] = i;
+
+    prevMap.set(curNum, i);
     result = Math.max(prevScore, result);
   }
 
