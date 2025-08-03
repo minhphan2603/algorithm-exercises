@@ -1,3 +1,13 @@
-import run from "./1.js";
+import run from "./2106";
 
-console.log(run([3, 3], 6));
+console.log(
+  run(
+    [
+      [2, 8],
+      [6, 3],
+      [8, 6],
+    ],
+    5,
+    4
+  )
+);
