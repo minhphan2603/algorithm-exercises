@@ -1,0 +1,12 @@
+{
+  "name": "algorithm-exercises",
+  "version": "1.0.0",
+  "description": "My code for exercises on Leetcode/Hackerrank...",
+  "main": "index.js",
+  "scripts": {
+    "leetcode": "ts-node src/leetcode/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
