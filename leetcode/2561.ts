@@ -1,3 +1,4 @@
+/** https://leetcode.com/problems/rearranging-fruits/description/?envType=daily-question&envId=2025-08-03 */
 function minCost(basket1: number[], basket2: number[]): number {
   const stats: Record<number, number> = {};
   const allFruits: number[] = [];
