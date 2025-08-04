@@ -1,3 +1,4 @@
+/** https://leetcode.com/problems/maximum-fruits-harvested-after-at-most-k-steps/description/?envType=daily-question&envId=2025-08-04 */
 function maxTotalFruits(
   fruits: [number, number][],
   startPos: number,
