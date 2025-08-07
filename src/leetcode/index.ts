@@ -1,3 +1,10 @@
-import run from "./904";
+import run from "./3363";
 
-console.log(run([1, 1, 0, 0, 3, 3]));
+console.log(
+  run([
+    [1, 2, 3, 4],
+    [5, 6, 8, 12],
+    [9, 122, 11, 12],
+    [13, 14, 15, 16],
+  ])
+);
