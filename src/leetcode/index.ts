@@ -1,3 +1,3 @@
-import run from "./808";
+import run from "./869";
 
-console.log(run(1000));
+console.log(run(125));
