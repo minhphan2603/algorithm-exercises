@@ -1,11 +1,11 @@
-import run from "./2438";
+import run from "./2787";
 
-console.log(
-  run(15, [
-    [0, 1],
-    [2, 2],
-    [0, 3],
-  ])
-);
+console.log(run(10, 2));
 
-console.log(run(2, [[0, 0]]));
+console.log(run(4, 1));
+
+console.log(run(100, 1));
+
+console.log(run(300, 1));
+
+console.log(run(137, 1));
