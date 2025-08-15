@@ -1,3 +1,3 @@
-import run from "./326";
+import run from "./342";
 
-console.log(run(3));
+console.log(run(Math.pow(4, 4.4)));
